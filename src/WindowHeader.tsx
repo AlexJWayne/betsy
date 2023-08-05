@@ -13,7 +13,7 @@ export function WindowHeader({ uiMode, setUiMode }: Props) {
     <nav className="flex justify-end p-2">
       <button
         className={clsx(
-          "w-10 h-10 rounded-md overflow-hidden relative capitalize text-red-500 transition-colors duration-300",
+          "w-10 h-10 rounded-md overflow-hidden relative capitalize text-red-500 transition-colors duration-1000",
           "bg-zinc-200 shadow-sm",
           "dark:bg-zinc-900 dark:shadow-md",
         )}
@@ -22,7 +22,7 @@ export function WindowHeader({ uiMode, setUiMode }: Props) {
       >
         <div
           className={clsx(
-            "w-20 flex flex-row transition-transform duration-300",
+            "w-20 flex flex-row transition-transform duration-1000",
             {
               "-translate-x-10": uiMode === "dark",
             },
@@ -38,6 +38,6 @@ export function WindowHeader({ uiMode, setUiMode }: Props) {
 
 type SwitchFaceProps = { uiMode: UiMode };
 function SwitchFace({ uiMode }: SwitchFaceProps) {
-  const Icon = uiMode === "dark" ? SunIcon : MoonIcon;
+  const Icon = uiMode === "dark" ? MoonIcon : SunIcon;
   return <Icon className="h-6 w-6 m-2" />;
 }

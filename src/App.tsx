@@ -14,19 +14,17 @@ function App() {
   );
 
   return (
-    <>
-      <div className={uiMode === "dark" ? "dark" : undefined}>
-        <div
-          className={clsx(
-            "h-screen w-full transition-colors",
-            "bg-zinc-300 text-zinc-800",
-            "dark:bg-zinc-800 dark:text-zinc-300",
-          )}
-        >
-          <WindowHeader uiMode={uiMode} setUiMode={setUiMode} />
-        </div>
+    <div className={uiMode === "dark" ? "dark" : undefined}>
+      <div
+        className={clsx(
+          "h-screen w-full transition-colors",
+          "bg-zinc-300 text-zinc-800",
+          "dark:bg-zinc-800 dark:text-zinc-300",
+        )}
+      >
+        <WindowHeader uiMode={uiMode} setUiMode={setUiMode} />
       </div>
-    </>
+    </div>
   );
 }
 

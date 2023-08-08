@@ -1,12 +1,13 @@
-import { useUiModeContext } from "./assets/use-ui-mode";
+import { uiModeAtom } from "./state/ui-mode";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
+import { useAtom } from "jotai";
 import { useEffect, useState } from "react";
 
 export type UiMode = "dark" | "light";
 
 export function UiModeButton() {
-  const { uiMode, setUiMode } = useUiModeContext();
+  const [uiMode, setUiMode] = useAtom(uiModeAtom);
   const [degrees, setDegrees] = useState(uiMode === "dark" ? 180 : 0);
 
   useEffect(() => {

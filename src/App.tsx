@@ -1,25 +1,25 @@
 import "./App.css";
 import { UiModeButton } from "./UiModeButton";
-import { UiModeContextProvider, useUiMode } from "./assets/use-ui-mode";
+import { uiModeAtom } from "./state/ui-mode";
 import { clsx } from "clsx";
+import { useAtom } from "jotai";
 
 function App() {
-  const { uiMode, setUiMode } = useUiMode();
+  const [uiMode] = useAtom(uiModeAtom);
 
   return (
-    <UiModeContextProvider value={{ uiMode, setUiMode }}>
-      <div className={uiMode === "dark" ? "dark" : undefined}>
-        <div
-          className={clsx(
-            "h-screen w-full transition-colors duration-1000",
-            "bg-zinc-300 text-zinc-800",
-            "dark:bg-zinc-800 dark:text-zinc-300",
-          )}
-        >
-          <UiModeButton />
-        </div>
+    <div className={uiMode === "dark" ? "dark" : undefined}>
+      <div
+        className={clsx(
+          { dark: uiMode === "dark" },
+          "h-screen w-full transition-colors duration-1000",
+          "bg-zinc-300 text-zinc-800",
+          "dark:bg-zinc-800 dark:text-zinc-300",
+        )}
+      >
+        <UiModeButton />
       </div>
-    </UiModeContextProvider>
+    </div>
   );
 }
 

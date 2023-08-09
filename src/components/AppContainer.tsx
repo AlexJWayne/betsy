@@ -1,4 +1,4 @@
-import { uiModeAtom } from "./state/ui-mode";
+import { uiModeAtom } from "../state/ui-mode";
 import clsx from "clsx";
 import { useAtom } from "jotai";
 import { ReactNode } from "react";

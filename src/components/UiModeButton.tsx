@@ -1,4 +1,4 @@
-import { uiModeAtom } from "./state/ui-mode";
+import { uiModeAtom } from "../state/ui-mode";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/solid";
 import clsx from "clsx";
 import { useAtom } from "jotai";

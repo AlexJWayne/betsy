@@ -1,6 +1,6 @@
-import { AppContainer } from "./AppContainer";
-import { RecordingsList } from "./RecordingsList";
-import { UiModeButton } from "./UiModeButton";
+import { AppContainer } from "./components/AppContainer";
+import { RecordingsList } from "./components/RecordingsList";
+import { UiModeButton } from "./components/UiModeButton";
 
 function App() {
   return (

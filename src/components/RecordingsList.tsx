@@ -1,4 +1,4 @@
-import { recordings } from "./data/recordings";
+import { recordings } from "../data/recordings";
 
 export function RecordingsList() {
   return (

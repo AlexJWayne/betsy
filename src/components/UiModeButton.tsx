@@ -17,10 +17,7 @@ export function UiModeButton() {
   return (
     <button
       className={clsx(
-        "absolute right-2 top-2 h-10 w-10 overflow-hidden rounded-md capitalize text-red-500 transition-all duration-1000",
-        "bg-zinc-200 shadow-sm",
-        "dark:bg-zinc-900 dark:shadow-md",
-        "hover:shadow-lg",
+        "absolute right-2 top-2 h-10 w-10 overflow-hidden capitalize text-red-500 transition-all duration-1000",
       )}
       aria-label="Toggle dark mode"
       onClick={() => setUiMode(uiMode === "light" ? "dark" : "light")}

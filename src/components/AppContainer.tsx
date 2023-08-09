@@ -12,9 +12,9 @@ export function AppContainer({ children }: Props) {
     <div className={clsx("h-screen w-full", { dark: uiMode === "dark" })}>
       <div
         className={clsx(
-          "transition-colors duration-500",
-          "bg-zinc-300 text-zinc-800",
-          "dark:bg-zinc-800 dark:text-zinc-300",
+          "bg-gradient-to-b transition-colors duration-500",
+          "from-zinc-50 via-zinc-300 to-zinc-300 text-zinc-800",
+          "via-30% dark:from-zinc-900 dark:via-zinc-800 dark:to-zinc-800 dark:text-zinc-300",
         )}
       >
         {children}

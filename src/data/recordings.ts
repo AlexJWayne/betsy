@@ -20,7 +20,7 @@ export const recordings: Recording[] = [
     image: diaryOfJaneImg,
     relativeSpeed: 1.0,
     youtubeUrl: "https://www.youtube.com/watch?v=pccCIio6NIc",
-    hasVideo: true,
+    hasVideo: false,
   },
   {
     artist: "Monkey 3",

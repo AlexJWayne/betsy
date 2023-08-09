@@ -1,7 +1,8 @@
 import { Recording } from "../data/recordings.interface";
+import { CalendarDaysIcon } from "@heroicons/react/20/solid";
 import {
   MusicalNoteIcon,
-  PlayCircleIcon,
+  PlayIcon,
   UserGroupIcon,
 } from "@heroicons/react/24/solid";
 import clsx from "clsx";
@@ -20,20 +21,22 @@ export function RecordingListItem({ recording }: Props) {
         "dark:bg-zinc-900",
       )}
     >
-      <img
-        src={recording.image}
-        alt={recording.song}
-        className="h-80 w-full object-cover"
-      />
-      <Property icon={UserGroupIcon}>{recording.artist}</Property>
-      <Property icon={MusicalNoteIcon}>{recording.song}</Property>
-      {recording.youtubeUrl && (
-        <Property icon={PlayCircleIcon}>
-          <a href={recording.youtubeUrl} className="hover:underline">
-            Play Video
-          </a>
+      <div
+        className="h-80 bg-cover bg-center"
+        style={{ backgroundImage: `url(${recording.image})` }}
+      >
+        {recording.youtubeUrl && (
+          <PlayButton youtubeUrl={recording.youtubeUrl} />
+        )}
+      </div>
+
+      <div className="grid grid-cols-3">
+        <Property icon={UserGroupIcon}>{recording.artist}</Property>
+        <Property icon={MusicalNoteIcon}>{recording.song}</Property>
+        <Property icon={CalendarDaysIcon}>
+          {new Date(recording.recordedAt).toLocaleDateString()}
         </Property>
-      )}
+      </div>
     </div>
   );
 }
@@ -47,8 +50,31 @@ function Property({
 }) {
   return (
     <div className="m-4 flex">
-      <Icon className="w-6 text-red-500 opacity-80" />
+      <Icon className="w-6 text-red-600 transition-colors dark:text-red-500/80" />
       <div className="mx-2 tracking-wide">{children}</div>
     </div>
+  );
+}
+
+function PlayButton({ youtubeUrl }: { youtubeUrl: string }) {
+  return (
+    <a
+      href={youtubeUrl}
+      className="group flex h-full w-full items-center justify-center"
+    >
+      <div
+        className={clsx(
+          "relative flex h-24 w-24 items-center justify-center rounded-full bg-zinc-800/75 transition-all",
+          "group-hover:scale-110 group-hover:bg-zinc-800/95",
+        )}
+      >
+        <PlayIcon
+          className={clsx(
+            "relative left-0 w-16 text-red-600 transition-all",
+            "group-hover:left-1",
+          )}
+        />
+      </div>
+    </a>
   );
 }

@@ -5,6 +5,7 @@ export type Recording = {
   artist: string;
   song: string;
   recordedAt: IsoDate;
+  image: string;
 
   relativeSpeed: number;
 

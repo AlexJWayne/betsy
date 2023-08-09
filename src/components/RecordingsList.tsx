@@ -1,13 +1,12 @@
 import { recordings } from "../data/recordings";
+import { RecordingListItem } from "./RecordingListItem";
 
 export function RecordingsList() {
   return (
-    <ul>
+    <div className="m-auto w-[800px] py-32">
       {recordings.map((recording) => (
-        <li>
-          {recording.song} <a href={recording.youtubeUrl}>Youtube</a>
-        </li>
+        <RecordingListItem recording={recording} />
       ))}
-    </ul>
+    </div>
   );
 }

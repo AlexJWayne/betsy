@@ -17,7 +17,7 @@ export function UiModeButton() {
   return (
     <button
       className={clsx(
-        "absolute top-2 right-2 w-10 h-10 rounded-md overflow-hidden capitalize text-red-500 transition-all duration-1000",
+        "absolute right-2 top-2 h-10 w-10 overflow-hidden rounded-md capitalize text-red-500 transition-all duration-1000",
         "bg-zinc-200 shadow-sm",
         "dark:bg-zinc-900 dark:shadow-md",
         "hover:shadow-lg",
@@ -39,5 +39,5 @@ export function UiModeButton() {
 type SwitchFaceProps = { uiMode: UiMode };
 function SwitchFace({ uiMode }: SwitchFaceProps) {
   const Icon = uiMode === "dark" ? MoonIcon : SunIcon;
-  return <Icon className="h-6 w-6 m-2 rotate-180" />;
+  return <Icon className="m-2 h-6 w-6 rotate-180" />;
 }

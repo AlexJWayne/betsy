@@ -11,7 +11,7 @@ export const recordings: Recording[] = [
     recordedAt: "2023-07-23",
     image: decodeImg,
     relativeSpeed: 1.0,
-    youtubeUrl: "w5MtFAtqeew",
+    youtubeId: "w5MtFAtqeew",
     hasVideo: true,
   },
   {
@@ -21,7 +21,7 @@ export const recordings: Recording[] = [
     recordedAt: "2023-06-04",
     image: diaryOfJaneImg,
     relativeSpeed: 1.0,
-    youtubeUrl: "pccCIio6NIc",
+    youtubeId: "pccCIio6NIc",
     hasVideo: false,
   },
   {
@@ -31,7 +31,7 @@ export const recordings: Recording[] = [
     recordedAt: "2023-05-03",
     image: icarusImg,
     relativeSpeed: 0.85,
-    youtubeUrl: "wwiKvjTc9do",
+    youtubeId: "wwiKvjTc9do",
     hasVideo: true,
   },
 ];

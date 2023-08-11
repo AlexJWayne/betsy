@@ -1,4 +1,10 @@
 import { useCurrentRecording } from "../hooks/use-current-recording";
+import {
+  RecordingPropertyArtist,
+  RecordingPropertyRecordedAt,
+  RecordingPropertyRelativeSpeed,
+  RecordingPropertySong,
+} from "./RecordingProperty";
 import { YoutubeEmbed } from "./Youtube";
 
 export function RecordingPage() {
@@ -7,10 +13,15 @@ export function RecordingPage() {
 
   return (
     <div className="flex h-full flex-col">
-      {currentRecording.youtubeUrl && (
-        <YoutubeEmbed embedId={currentRecording.youtubeUrl} />
+      {currentRecording.youtubeId && (
+        <YoutubeEmbed embedId={currentRecording.youtubeId} />
       )}
-      <p>{currentRecording.song}</p>
+      <div className="grid w-full grid-cols-4">
+        <RecordingPropertyArtist recording={currentRecording} />
+        <RecordingPropertySong recording={currentRecording} />
+        <RecordingPropertyRecordedAt recording={currentRecording} />
+        <RecordingPropertyRelativeSpeed recording={currentRecording} />
+      </div>
     </div>
   );
 }

@@ -10,7 +10,9 @@ export type Recording = {
 
   relativeSpeed: number;
 
-  youtubeUrl?: string;
+  youtubeId?: string;
 
   hasVideo?: boolean;
+
+  description?: string;
 };

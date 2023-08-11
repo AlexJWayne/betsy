@@ -1,9 +1,11 @@
 import { Recording } from "../data/recordings.interface";
 import { useCurrentRecording } from "../hooks/use-current-recording";
-import { CalendarDaysIcon } from "@heroicons/react/20/solid";
-import { MusicalNoteIcon, UserGroupIcon } from "@heroicons/react/24/solid";
+import {
+  RecordingPropertyArtist,
+  RecordingPropertyRecordedAt,
+  RecordingPropertySong,
+} from "./RecordingProperty";
 import clsx from "clsx";
-import { ReactNode } from "react";
 
 type Props = {
   recording: Recording;
@@ -25,34 +27,11 @@ export function RecordingListItem({ recording }: Props) {
         style={{ backgroundImage: `url(${recording.image})` }}
       >
         <div className="grid w-full grid-cols-3 bg-red-950/60 backdrop-blur-sm">
-          <Property icon={UserGroupIcon}>{recording.artist}</Property>
-          <Property icon={MusicalNoteIcon}>{recording.song}</Property>
-          <Property icon={CalendarDaysIcon}>
-            {new Date(recording.recordedAt).toLocaleDateString(undefined, {
-              year: "numeric",
-              month: "long",
-              day: "numeric",
-            })}
-          </Property>
+          <RecordingPropertyArtist recording={recording} />
+          <RecordingPropertySong recording={recording} />
+          <RecordingPropertyRecordedAt recording={recording} />
         </div>
       </div>
     </a>
-  );
-}
-
-function Property({
-  icon: Icon,
-  children,
-}: {
-  icon: React.ForwardRefExoticComponent<
-    React.PropsWithoutRef<React.SVGProps<SVGSVGElement>>
-  >;
-  children: ReactNode;
-}) {
-  return (
-    <div className="m-4 flex justify-center">
-      <Icon className="w-6 text-red-600" />
-      <div className="mx-2 tracking-wide text-zinc-50/75">{children}</div>
-    </div>
   );
 }

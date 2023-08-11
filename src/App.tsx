@@ -1,7 +1,6 @@
 import { AppContainer } from "./components/AppContainer";
 import { RecordingPage } from "./components/RecordingPage";
 import { RecordingsList } from "./components/RecordingsList";
-import { UiModeButton } from "./components/UiModeButton";
 import { useCurrentRecording } from "./hooks/use-current-recording";
 import { useWatchNavigation } from "./hooks/use-watch-navigation";
 
@@ -12,14 +11,7 @@ function App() {
 
   return (
     <AppContainer>
-      {currentRecording ? (
-        <RecordingPage />
-      ) : (
-        <>
-          <UiModeButton />
-          <RecordingsList />
-        </>
-      )}
+      {currentRecording ? <RecordingPage /> : <RecordingsList />}
     </AppContainer>
   );
 }

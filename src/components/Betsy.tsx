@@ -9,6 +9,7 @@ export function Betsy() {
         "bg-contain bg-center bg-no-repeat",
         "pointer-events-none font-serif italic tracking-widest",
         "text-zinc-400",
+        "max-xl:scale-90 max-lg:scale-50 max-md:-left-[200px] max-md:scale-[25%]",
       )}
       style={{
         backgroundImage: `url(${betsy})`,

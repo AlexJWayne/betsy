@@ -17,13 +17,14 @@ export function RecordingListItem({ recording }: Props) {
   return (
     <a
       className={clsx(
-        "my-8 block cursor-pointer overflow-hidden rounded-2xl bg-zinc-200 transition-all hover:scale-105",
+        "m-2 inline-block w-[500px] cursor-pointer overflow-hidden rounded-lg bg-zinc-200 transition-all hover:scale-105",
+        "xl:w-[600px]",
       )}
       href={`?${recording.id}`}
       onClick={(event) => onClickRecording(event, recording)}
     >
       <div
-        className="flex h-96 items-end bg-cover bg-center"
+        className="flex h-[320px] items-end bg-cover bg-center xl:h-[380px]"
         style={{ backgroundImage: `url(${recording.image})` }}
       >
         <div className="grid w-full grid-cols-3 bg-red-950/60 backdrop-blur-sm">

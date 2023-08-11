@@ -14,30 +14,28 @@ type Props = {
 
 export function RecordingListItem({ recording }: Props) {
   return (
-    <div
+    <a
       className={clsx(
-        "my-8 overflow-hidden rounded-2xl shadow-sm transition-colors duration-1000",
-        "bg-zinc-200",
-        "dark:bg-zinc-900",
+        "my-8 block cursor-pointer overflow-hidden rounded-2xl bg-zinc-200 transition-all hover:scale-105",
       )}
     >
       <div
-        className="h-80 bg-cover bg-center"
+        className="flex h-96 items-end bg-cover bg-center"
         style={{ backgroundImage: `url(${recording.image})` }}
       >
-        {recording.youtubeUrl && (
-          <PlayButton youtubeUrl={recording.youtubeUrl} />
-        )}
+        <div className="grid w-full grid-cols-3 bg-red-950/60 backdrop-blur-sm">
+          <Property icon={UserGroupIcon}>{recording.artist}</Property>
+          <Property icon={MusicalNoteIcon}>{recording.song}</Property>
+          <Property icon={CalendarDaysIcon}>
+            {new Date(recording.recordedAt).toLocaleDateString(undefined, {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </Property>
+        </div>
       </div>
-
-      <div className="grid grid-cols-3">
-        <Property icon={UserGroupIcon}>{recording.artist}</Property>
-        <Property icon={MusicalNoteIcon}>{recording.song}</Property>
-        <Property icon={CalendarDaysIcon}>
-          {new Date(recording.recordedAt).toLocaleDateString()}
-        </Property>
-      </div>
-    </div>
+    </a>
   );
 }
 
@@ -49,9 +47,9 @@ function Property({
   children: ReactNode;
 }) {
   return (
-    <div className="m-4 flex">
-      <Icon className="w-6 text-red-600 transition-colors dark:text-red-500/80" />
-      <div className="mx-2 tracking-wide">{children}</div>
+    <div className="m-4 flex justify-center">
+      <Icon className="w-6 text-red-600" />
+      <div className="mx-2 tracking-wide text-zinc-50/75">{children}</div>
     </div>
   );
 }

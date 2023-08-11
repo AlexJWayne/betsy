@@ -16,7 +16,7 @@ type Props = {
 
 export function RecordingProperty({ icon: Icon, children }: Props) {
   return (
-    <div className="m-4 flex justify-center">
+    <div className="m-4 flex items-center justify-center">
       <Icon className="w-6 text-red-600" />
       <div className="mx-2 tracking-wide text-zinc-50/75">{children}</div>
     </div>
@@ -66,7 +66,7 @@ export function RecordingPropertyRelativeSpeed({
 }) {
   return (
     <RecordingProperty icon={ClockIcon}>
-      {Math.round(recording.relativeSpeed * 100)}%
+      {Math.round(recording.relativeSpeed * 100)}% Speed
     </RecordingProperty>
   );
 }

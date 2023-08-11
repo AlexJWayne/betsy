@@ -7,7 +7,7 @@ export function AppContainer({ children }: Props) {
   return (
     <div
       className={clsx(
-        "h-full w-full bg-gradient-to-b transition-colors duration-500",
+        "h-full w-full bg-gradient-to-b via-[800px] transition-colors duration-500",
         "from-zinc-900 via-zinc-800 to-zinc-800 text-zinc-300",
       )}
     >

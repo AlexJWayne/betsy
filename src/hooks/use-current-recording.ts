@@ -13,7 +13,7 @@ export function useCurrentRecording() {
       recording: Recording,
     ) => {
       event.preventDefault();
-      window.history.pushState({}, "", `/?${recording.id}`);
+      window.history.pushState({}, "", `?${recording.id}`);
       setCurrentRecording(recording);
     },
     [setCurrentRecording],

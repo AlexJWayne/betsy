@@ -17,7 +17,7 @@ export function RecordingListItem({ recording }: Props) {
       className={clsx(
         "my-8 block cursor-pointer overflow-hidden rounded-2xl bg-zinc-200 transition-all hover:scale-105",
       )}
-      href={`/?${recording.id}`}
+      href={`?${recording.id}`}
       onClick={(event) => onClickRecording(event, recording)}
     >
       <div
@@ -44,7 +44,9 @@ function Property({
   icon: Icon,
   children,
 }: {
-  icon: (props: { className: string }) => ReactNode;
+  icon: React.ForwardRefExoticComponent<
+    React.PropsWithoutRef<React.SVGProps<SVGSVGElement>>
+  >;
   children: ReactNode;
 }) {
   return (

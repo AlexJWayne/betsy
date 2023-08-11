@@ -6,10 +6,9 @@ export function RecordingsList() {
   return (
     <>
       <Betsy />
-
       <div className="m-auto -mt-52 w-[800px] pb-40">
         {recordings.map((recording) => (
-          <RecordingListItem recording={recording} />
+          <RecordingListItem key={recording.id} recording={recording} />
         ))}
       </div>
     </>

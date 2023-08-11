@@ -2,6 +2,7 @@
 type IsoDate = `${number}-${number}-${number}`;
 
 export type Recording = {
+  id: string;
   artist: string;
   song: string;
   recordedAt: IsoDate;

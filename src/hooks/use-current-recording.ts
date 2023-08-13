@@ -16,7 +16,7 @@ export function useCurrentRecording() {
 
   const onClickRecording = useCallback(
     (event: MouseAnchorClickEvent, recording: Recording) => {
-      navigate(event, `?${recording.id}`);
+      navigate(event, `/?${recording.id}`);
       setCurrentRecording(recording);
     },
     [navigate, setCurrentRecording],
@@ -24,7 +24,7 @@ export function useCurrentRecording() {
 
   const onClickHome = useCallback(
     (event: MouseAnchorClickEvent) => {
-      navigate(event, window.location.href.split("?")[0]);
+      navigate(event, "/");
       setCurrentRecording(null);
     },
     [navigate, setCurrentRecording],

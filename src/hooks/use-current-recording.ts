@@ -4,20 +4,31 @@ import { useAtom } from "jotai";
 import { useCallback } from "react";
 import React from "react";
 
+type MouseAnchorClickEvent = React.MouseEvent<HTMLAnchorElement, MouseEvent>;
+
 export function useCurrentRecording() {
   const [currentRecording, setCurrentRecording] = useAtom(currentRecordingAtom);
 
+  const navigate = useCallback((event: MouseAnchorClickEvent, url: string) => {
+    event.preventDefault();
+    window.history.pushState({}, "", url);
+  }, []);
+
   const onClickRecording = useCallback(
-    (
-      event: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
-      recording: Recording,
-    ) => {
-      event.preventDefault();
-      window.history.pushState({}, "", `?${recording.id}`);
+    (event: MouseAnchorClickEvent, recording: Recording) => {
+      navigate(event, `?${recording.id}`);
       setCurrentRecording(recording);
     },
-    [setCurrentRecording],
+    [navigate, setCurrentRecording],
   );
 
-  return { currentRecording, onClickRecording };
+  const onClickHome = useCallback(
+    (event: MouseAnchorClickEvent) => {
+      navigate(event, window.location.href.split("?")[0]);
+      setCurrentRecording(null);
+    },
+    [navigate, setCurrentRecording],
+  );
+
+  return { currentRecording, onClickRecording, onClickHome };
 }

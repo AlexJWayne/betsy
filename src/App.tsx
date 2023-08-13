@@ -1,4 +1,5 @@
 import { AppContainer } from "./components/AppContainer";
+import { Betsy } from "./components/Betsy";
 import { RecordingPage } from "./components/RecordingPage";
 import { RecordingsList } from "./components/RecordingsList";
 import { useCurrentRecording } from "./hooks/use-current-recording";
@@ -11,6 +12,7 @@ function App() {
 
   return (
     <AppContainer>
+      <Betsy />
       {currentRecording ? <RecordingPage /> : <RecordingsList />}
     </AppContainer>
   );

@@ -4,11 +4,13 @@ type Props = {
 
 export function YoutubeEmbed({ embedId }: Props) {
   return (
-    <iframe
-      className="h-[90vh] w-full"
-      src={`https://www.youtube.com/embed/${embedId}`}
-      allowFullScreen
-      title="Embedded youtube"
-    />
+    <div className="p-2 lg:p-8">
+      <iframe
+        className="h-[60vh] w-full lg:h-[90vh]"
+        src={`https://www.youtube.com/embed/${embedId}`}
+        allowFullScreen
+        title="Embedded youtube"
+      />
+    </div>
   );
 }

@@ -12,16 +12,16 @@ export function RecordingPage() {
   if (!currentRecording) return null;
 
   return (
-    <div className="flex h-full flex-col">
-      {currentRecording.youtubeId && (
-        <YoutubeEmbed embedId={currentRecording.youtubeId} />
-      )}
-      <div className="grid w-full grid-cols-4">
+    <>
+      <div className="grid w-full grid-cols-2 lg:grid-cols-4">
         <RecordingPropertyArtist recording={currentRecording} />
         <RecordingPropertySong recording={currentRecording} />
         <RecordingPropertyRecordedAt recording={currentRecording} />
         <RecordingPropertyRelativeSpeed recording={currentRecording} />
       </div>
-    </div>
+      {currentRecording.youtubeId && (
+        <YoutubeEmbed embedId={currentRecording.youtubeId} />
+      )}
+    </>
   );
 }

@@ -1,12 +1,18 @@
 import { recordings } from "../data/recordings";
 import { Betsy } from "./Betsy";
 import { RecordingListItem } from "./RecordingListItem";
+import clsx from "clsx";
 
 export function RecordingsList() {
   return (
     <>
       <Betsy />
-      <div className="m-20 -mt-24 flex flex-wrap justify-center pb-40 max-md:mx-4">
+      <div
+        className={clsx(
+          "m-4 flex flex-wrap justify-center pb-40 md:mx-20",
+          "-mt-10 sm:-mt-16 md:-mt-24",
+        )}
+      >
         {recordings.map((recording) => (
           <RecordingListItem key={recording.id} recording={recording} />
         ))}

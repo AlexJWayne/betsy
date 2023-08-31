@@ -8,11 +8,22 @@ import hysteriaImg from "../assets/hysteria.webp";
 import icarusImg from "../assets/icarus.jpg";
 import machineHeadImg from "../assets/machinehead.jpg";
 import sadButTrueImg from "../assets/sadbuttrue.jpg";
+import schismImg from "../assets/schism.webp";
 import seekAndDestroyImg from "../assets/seekanddestroy.jpg";
 import tourniquetImg from "../assets/tourniquet.jpg";
 import { Recording } from "./recordings.interface";
 
 export const recordings: Recording[] = [
+  {
+    id: "schism",
+    artist: "Tool",
+    song: "Schism",
+    recordedAt: "2023-08-29",
+    image: schismImg,
+    relativeSpeed: 1.0,
+    youtubeId: "2Urn877fmnU",
+    hasVideo: true,
+  },
   {
     id: "decode",
     artist: "Paramore",

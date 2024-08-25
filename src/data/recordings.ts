@@ -22,7 +22,7 @@ export const recordings: Recording[] = [
     recordedAt: "2024-08-25",
     image: astralMeanderImg,
     relativeSpeed: 1.0,
-    youtubeId: "G4m6LZ4Ezs4",
+    youtubeId: "u-BpmX0fnJQ",
     hasVideo: false,
   },
   {

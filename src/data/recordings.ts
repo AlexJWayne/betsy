@@ -1,5 +1,6 @@
 import aceOfSpadesImg from "../assets/aceofspades.jpg";
 import angelsInsectsImg from "../assets/angelsinsects.jpg";
+import astralMeanderImg from "../assets/astralmeander.jpg";
 import bringMeToLifeImg from "../assets/bringme.jpg";
 import decodeImg from "../assets/decode.jpg";
 import diaryOfJaneImg from "../assets/diaryofjane.jpg";
@@ -14,6 +15,16 @@ import tourniquetImg from "../assets/tourniquet.jpg";
 import { Recording } from "./recordings.interface";
 
 export const recordings: Recording[] = [
+  {
+    id: "astral-meander",
+    artist: "Alex Wayne",
+    song: "Astral Meander",
+    recordedAt: "2024-08-25",
+    image: astralMeanderImg,
+    relativeSpeed: 1.0,
+    youtubeId: "G4m6LZ4Ezs4",
+    hasVideo: false,
+  },
   {
     id: "schism",
     artist: "Tool",
